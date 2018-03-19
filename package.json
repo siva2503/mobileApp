@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "serve:browser": "node_modules/.bin/webpack-dev-server --config ./webpack/webpack.config.js",
-    "test": "jest"
+    "unit-test": "jest __tests__/*.js",
+    "functional-test": "wdio wdio.conf.js"
   },
   "dependencies": {
     "react": "16.2.0",
@@ -23,6 +24,7 @@
     "babel-loader": "^7.1.4",
     "babel-plugin-react-native-web": "^0.5.3",
     "babel-plugin-transform-inline-environment-variables": "^0.3.0",
+    "babel-plugin-webpack-loaders": "^0.9.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-native": "^4.0.0",
@@ -31,6 +33,7 @@
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.0.6",
     "jest": "22.4.2",
+    "null-loader": "^0.1.1",
     "path": "^0.12.7",
     "react-dom": "^16.2.0",
     "react-test-renderer": "16.2.0",
@@ -44,6 +47,10 @@
     "webpack-dev-server": "^2.9.5"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "moduleNameMapper": {
+      "\\.(css|scss|less)$": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(png|jpg|gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    }
   }
 }
