@@ -83,6 +83,7 @@ export default class App extends Component<Props> {
             <View style={styles.textInput}>
               <Text style={styles.textLabel}>First Name </Text>
               <TextInput
+                testID = {"firstname"}
                 underlineColorAndroid = "transparent"
                 style={styles.textBox}
                 placeholder={'Enter your first name'}
@@ -93,6 +94,7 @@ export default class App extends Component<Props> {
             <View style={styles.textInput}>
               <Text style={styles.textLabel}>Last Name</Text>
               <TextInput
+                testID = {"lastname"}
                 underlineColorAndroid = "transparent"
                 style={styles.textBox}
                 placeholder={'Enter your last name'}
@@ -102,6 +104,7 @@ export default class App extends Component<Props> {
             <View style={styles.textInput}>
               <Text style={styles.textLabel}>Username</Text>
               <TextInput
+                testID = {"username"}
                 underlineColorAndroid = "transparent"
                 style={styles.textBox} placeholder={'Enter your username'}
                 onChangeText={(text)=>this.handleUsername(text)}
@@ -110,6 +113,7 @@ export default class App extends Component<Props> {
             <View style={styles.textInput}>
               <Text style={styles.textLabel}>Password</Text>
               <TextInput
+                testID = {"password"}
                 underlineColorAndroid = "transparent"
                 style={styles.textBox}
                 placeholder={'Enter your password'}
@@ -118,6 +122,7 @@ export default class App extends Component<Props> {
             <View style={styles.textInput}>
               <Text style={styles.textLabel}>EmailID</Text>
               <TextInput
+                testID = {"emailid"}
                 underlineColorAndroid = "transparent"
                 style={styles.textBox}
                 placeholder={'Enter your email id'}
@@ -126,8 +131,8 @@ export default class App extends Component<Props> {
             </View>
             <View style={styles.textInput}>
               <Text style={styles.textLabel}>Age</Text>
-              <Picker selectedValue={"34"} style={{width: 100}} >
-                <Picker.Item label="30" />
+              <Picker selectedValue={"34"} style={{width: 100}} testID = {"age"}>
+                <Picker.Item label="30"/>
                 <Picker.Item label="31" />
                 <Picker.Item label="32" />
                 <Picker.Item label="33" />
@@ -140,22 +145,25 @@ export default class App extends Component<Props> {
             <View style={styles.textInput}>
               <Text style={styles.textLabel}>Paperless bills</Text>
               <Switch
-                  value = {this.state.paperlessSwitch}
-                  onValueChange={()=>{
-                    this.setState({paperlessSwitch: !this.state.paperlessSwitch})
-                  }}
-                />
+                testID = {"paperless"}
+                value = {this.state.paperlessSwitch}
+                onValueChange={()=>{
+                  this.setState({paperlessSwitch: !this.state.paperlessSwitch})
+                }}
+              />
             </View>
             <View style={styles.textInput}>
               <Text style={styles.textLabel}>Email notification</Text>
               {(Platform.OS === 'android') ? 
                 <CheckBox
+                  testID = {"emailNotification"}
                   value = {this.state.emailNotifyCheck}
                   onValueChange={()=>{
                     this.setState({emailNotifyCheck: !this.state.emailNotifyCheck})
                   }}
                 /> : 
                 <Switch
+                  testID = {"emailNotification"}
                   value = {this.state.emailNotifyCheck}
                   onValueChange={()=>{
                     this.setState({emailNotifyCheck: !this.state.emailNotifyCheck})
@@ -164,19 +172,24 @@ export default class App extends Component<Props> {
               }
             </View>
             <View style={styles.textInput}>
-            <Button color={'#ff0000'} title={'Register'} onPress={()=>{this.setState({registered: true,})}} />
+            <Button color={'#ff0000'} title={'Register'} testID = {"register"} onPress={()=>{this.setState({registered: true,})}} />
             </View>
           </View>
           {this.state.registered ?
           <View>
-          <TouchableOpacity style={styles.registerButton} onPress={()=>{
+          <TouchableOpacity 
+            style={styles.registerButton}
+            testID = {"reregister"}
+            onPress={()=>{
             this.setState({registered: false})}}>
             <Text>Re-Register</Text>
           </TouchableOpacity>
+          <View testID = {"registeredData"}>
             <Table>
               <Row data={tableHead} style={styles.head} textStyle={styles.text}/>
               <Rows data={tableData} style={styles.row} textStyle={styles.text}/>
             </Table>
+          </View>
           </View>:null}
         </View>
       </ScrollView>
