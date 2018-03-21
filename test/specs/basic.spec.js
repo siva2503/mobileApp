@@ -2,7 +2,7 @@ var assert = require('assert');
 
 describe('Verify Page title', function() {
   it('should have the right title', function () {
-    browser.url('http://localhost:8080/');
+    browser.url('http://localhost:8010/');
     var title = browser.getTitle();
     assert.equal(title, 'React Native Web');
   });
