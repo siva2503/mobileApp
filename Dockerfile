@@ -7,8 +7,8 @@ WORKDIR /usr/src/mobileApp
 
 COPY . /usr/src/mobileApp
 COPY package.json /usr/mobileApp/app/package.json
-#EXPOSE 8080
 RUN npm install
 
+EXPOSE 8010
 ENTRYPOINT npm run serve:browser
 
