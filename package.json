@@ -7,7 +7,9 @@
     "serve:browser": "node_modules/.bin/webpack-dev-server --config ./webpack/webpack.config.js --host 0.0.0.0 --port 8010",
     "unit-test": "jest __tests__/*.js",
     "functional-test": "rm -rfv allure-results/* && wdio wdio.conf.js --spec test/specs/*.spec.js; allure generate allure-results/ --clean && allure open",
-    "smoke-test": "rm -rfv allure-results/* && wdio wdio.conf.js --spec smoketest/specs/*.spec.js; allure generate allure-results/ --clean && allure open"
+    "smoke-test": "rm -rfv allure-results/* && wdio wdio.conf.js --spec smoketest/specs/*.spec.js; allure generate allure-results/ --clean && allure open",
+    "androidAppRelease":"cd android/ && fastlane alpha",
+    "iosAppRelease":"cd ios/ && fastlane alpha"
   },
   "dependencies": {
     "react": "16.2.0",

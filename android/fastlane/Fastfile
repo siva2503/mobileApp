@@ -13,7 +13,7 @@
 # Update this, if you use features of a newer version
 min_fastlane_version("2.72.0")
 
-default_platform(:ios)
+default_platform(:android)
 
 lane :alpha do
 
@@ -28,14 +28,14 @@ lane :alpha do
   #  )
 
   slack(
-    message: "App successfully released to Alpha_IOS user group!",
+    message: "App successfully released to Alpha_Android user group!",
     slack_url: "https://hooks.slack.com/services/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",
     username: "MOBILE-APP-DEMO",
     channel: "#tobedeleeted",
     attachment_properties: {
       fields: [{
         title: "Auto bot check",
-        value: "Successfully uploaded IOS app",
+        value: "Success",
         short: true
       }]
     }
