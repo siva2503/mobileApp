@@ -81,7 +81,7 @@ export default class App extends Component<Props> {
           </Text>
           <View style={styles.registrationArea}>
             <View style={styles.textInput}>
-              <Text style={styles.textLabel}>First Name </Text>
+              <Text style={styles.textLabel} testID = {"firstname_label"}>First Name </Text>
               <TextInput
                 testID = {"firstname"}
                 underlineColorAndroid = "transparent"
@@ -92,7 +92,7 @@ export default class App extends Component<Props> {
               />
             </View>
             <View style={styles.textInput}>
-              <Text style={styles.textLabel}>Last Name</Text>
+              <Text style={styles.textLabel} testID = {"lastname_label"}>Last Name</Text>
               <TextInput
                 testID = {"lastname"}
                 underlineColorAndroid = "transparent"
@@ -102,7 +102,7 @@ export default class App extends Component<Props> {
               />
             </View>
             <View style={styles.textInput}>
-              <Text style={styles.textLabel}>Username</Text>
+              <Text style={styles.textLabel} testID = {"username_label"}>Username</Text>
               <TextInput
                 testID = {"username"}
                 underlineColorAndroid = "transparent"
@@ -111,7 +111,7 @@ export default class App extends Component<Props> {
               />
             </View>
             <View style={styles.textInput}>
-              <Text style={styles.textLabel}>Password</Text>
+              <Text style={styles.textLabel} testID = {"password_label"}>Password</Text>
               <TextInput
                 testID = {"password"}
                 underlineColorAndroid = "transparent"
@@ -120,7 +120,7 @@ export default class App extends Component<Props> {
               />
             </View>
             <View style={styles.textInput}>
-              <Text style={styles.textLabel}>EmailID</Text>
+              <Text style={styles.textLabel} testID = {"email_label"}>EmailID</Text>
               <TextInput
                 testID = {"emailid"}
                 underlineColorAndroid = "transparent"
