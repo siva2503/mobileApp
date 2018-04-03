@@ -75,7 +75,7 @@ export default class App extends Component<Props> {
           <Text style={styles.welcome}>
             Welcome to BoilerPlate-UI!
           </Text>
-          <Image source={require('./src/images/bedtime-icon-off.png')} style={styles.logoImage}></Image>
+          {/* <Image source={require('./src/images/bedtime-icon-off.png')} style={styles.logoImage}></Image> */}
           <Text style={styles.formHeader}>
             Sample Registration Form
           </Text>

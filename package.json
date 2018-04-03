@@ -5,13 +5,14 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "serve:browser": "node_modules/.bin/webpack-dev-server --config ./webpack/webpack.config.js --host 0.0.0.0 --port 8010",
-    "unit-test": "jest __tests__/*.js",
+    "unit-test": "jest __tests__/*.js --ci --testResultsProcessor='jest-junit'",
     "functional-test": "rm -rfv allure-results/* && wdio wdio.conf.js --spec test/specs/*.spec.js; allure generate allure-results/ --clean && allure open",
     "smoke-test": "rm -rfv allure-results/* && wdio wdio.conf.js --spec smoketest/specs/*.spec.js; allure generate allure-results/ --clean && allure open",
-    "androidAppRelease":"cd android/ && fastlane alpha",
-    "iosAppRelease":"cd ios/ && fastlane alpha"
+    "androidAppRelease": "cd android/ && fastlane alpha",
+    "iosAppRelease": "cd ios/ && fastlane alpha"
   },
   "dependencies": {
+    "jest-junit": "^3.6.0",
     "react": "16.2.0",
     "react-native": "0.53.3",
     "react-native-cli": "^2.0.1",
@@ -50,6 +51,7 @@
     "webpack-dev-server": "^2.9.5"
   },
   "jest": {
+    "testResultsProcessor": "jest-junit",
     "preset": "react-native",
     "moduleNameMapper": {
       "\\.(css|scss|less)$": "<rootDir>/__mocks__/styleMock.js",
